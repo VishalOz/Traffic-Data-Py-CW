@@ -1,41 +1,45 @@
-while True:
-    try:
-        day = input("Please enter the day of the survey in the format dd: ")
-        if not day.isdigit():  
-            print("Integer required!")
+def dateValidation():
+    while True:
+        try:
+            day = int(input("Please enter the day of the survey in the format dd: "))
+            if 1 > day or day > 31:
+                print("Invalid date")
+                continue
+            else:
+                break
+        except ValueError:
+            print("Integer required")
             continue
-        day = int(day)  
-        if day < 1 or day > 31:
-            print("Day must be in the range of 1-31")
-        else:
-            break
-    except ValueError:
-        print("Invalid input")
 
-while True:
-    try:
-        month = input("Please enter the month of the survey in the format MM: ")
-        if not month.isdigit():  
-            print("Integer required!")
+    while True:
+        try:
+            month = int(input("Please enter the day of the survey in the format dd: "))
+            if 1 > month or month > 12:
+                print("Out of range - values must be in the range 1 to 12.")
+                continue
+            else:
+                break
+        except ValueError:
+            print("Integer required")
             continue
-        month = int(month)  
-        if month < 1 or month > 12:
-            print("Month must be in the range of 1-12")
-        else:
-            break
-    except ValueError:
-        print("Invalid input")
 
-while True:
-    try:
-        year = input("Please enter the year of the survey in the format YYYY: ")
-        if not year.isdigit():  
-            print("Integer required!")
+    while True:
+        try:
+            year = int(input("Please enter the year of the survey in the format YYYY: "))
+            if 2000 > year or year > 2025:
+                print("Out of range - values must range from 2000 and 2024.")
+                continue
+            else:
+                break
+        except ValueError:
+            print("Integer required")
             continue
-        year = int(year)  
-        if year < 2000 or year > 2025:
-            print("Year must be in the range of 2000-2025")
-        else:
-            break
-    except ValueError:
-        print("Invalid input")
+
+        return day, month, year
+
+def main():
+    day, month, year = dateValidation()
+    print(f"Day: {day}, Month: {month}, Year: {year}")
+
+if __name__ == "__main__":
+    main()
