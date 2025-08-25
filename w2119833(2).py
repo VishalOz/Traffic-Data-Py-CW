@@ -1,6 +1,6 @@
 #Author:Vishal Oshada Sudasingha
 #Date: 22/12/2024
-#Student ID: 20240036/w2119833
+
 
 
 import tkinter as tk
